@@ -1,0 +1,99 @@
+.main {
+
+
+    .title {
+        border: solid 1px #D1D1D1;
+        border-radius: 5px;
+        text-align: center;
+        h2 {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    }
+
+    .searchBox {
+        margin-top: 5px;
+        border: solid 1px #D1D1D1;
+        border-radius: 5px;
+        padding: 2px;
+        label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .input-form-standard {
+            font-size: 18px;
+            width: 99%;
+        }
+    }
+    .tableContainer {
+        margin-top: 5px;
+        border: solid 1px #D1D1D1;
+        border-radius: 5px;
+        .work-table-result {
+            .mat-raised-button {
+                margin: 4px;
+                background: #4A77EB;
+                bottom: 2px;
+            }
+    
+           margin: 2px;
+            table {
+                width: 100%;
+                padding: 0px;
+              }
+              .mat-row {
+                height: auto;
+                :hover {
+                    cursor: pointer;
+                }
+              }
+            .mat-cell {
+                font-size: 14px;
+                border:solid 1px #D3DEDC;
+                text-align: center;
+                padding: 8px 8px 8px 0;
+            }
+        
+            .mat-header-cell {
+                font-size: 14px;
+                margin: 1px;
+                text-align: center;
+                font-weight: bold;
+           
+            }
+            tr.mat-row:hover {
+                background-color: #D3DEDC;
+            }
+        
+            .mat-header-row {
+                padding: 3px;
+                height: 2px;
+            }
+            .mat-paginator {
+              height: 2%;
+            }  
+            
+            td.mat-cell {
+                /* row border */
+                border-bottom: 0.5px solid darkgrey;
+                border-top: 0.5px solid darkgrey;
+               }
+               
+               td.mat-cell:first-child {
+                 /* row border */
+                 border-left: 0.5px solid darkgrey;
+               }
+               
+               td.mat-cell:last-child {
+                 /* row border */
+                 border-right: 0.5px solid darkgrey;
+               }
+            
+               .mat-row:nth-child(even){
+                background-color: #DAEAF1;
+            }
+          }
+    }
+    
+    
+}

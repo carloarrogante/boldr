@@ -1,0 +1,107 @@
+<div class="header">
+    <label> {{data.details["container-title"]}}</label>
+    <mat-icon class="close-button" (click)="closeDialog()">highlight_off</mat-icon>
+</div>
+
+<div class="main">
+
+    <div class="articleHeader">
+        <div class="c1">
+            <label class="placers">Article:  </label>
+            <br>
+            <label class="placers">Field: </label>
+            <br>
+            <label class="placers">Publisher: </label>
+            <br>
+            <label class="placers">Document Title: </label>
+        </div>
+        <div class="c2">
+            <label class="dts">{{data.details["container-title"]}}  </label>
+            <br>
+            <label class="dts">{{data.details.subject}} </label>
+            <br>
+            <label class="dts">{{data.details.publisher}} </label>
+            <br>
+            <label class="dts"> {{data.details.title}} </label>
+          
+
+        </div>
+        <div class="c3">
+
+        </div>
+        <div class="c4">
+            <label class="placers">DOI: </label>
+            <br>
+            <label class="placers">ISSN: </label>
+            <br>
+            <label class="placers">Type: </label>
+            <br>
+            <label class="placers">Issue No: </label>
+        </div>
+        <div class="c5">
+            <label class="dts">{{data.details.DOI}} </label>
+            <br>
+            <label class="dts">{{data.details.ISSN}}</label>
+            <br>
+            <label class="dts">{{data.details.type}} </label>
+            <br>
+            <label class="dts">{{data.details["journal-issue"].issue}}</label>
+       </div>
+    </div>
+
+    <div class="articleBody">
+        <div class="l1">
+            <label class="placers">Issue No: </label>
+            <br>
+            <label class="placers">Volume: </label>
+            <br>
+            <label class="placers">Date Issued: </label>
+            <br>
+            <label class="placers">Score: </label>
+            <br>
+            <label class="placers">Source: </label>
+           
+           
+    
+           
+        </div>
+
+        <div class="l2">
+            <label class="dts">{{data.details["journal-issue"].issue}}</label>
+            <br>
+            <label class="dts">{{data.details.volume}} </label>
+            <br>
+            <label class="dts">{{data.details.issued["date-parts"]}} </label>
+            <br>
+            <label class="dts">{{data.details.score}} </label>
+            <br>
+            <label class="dts">{{data.details.source}} </label>
+           
+           
+        
+            
+        </div>
+
+        <div class="l3">
+            <label class="placers">Authors: </label>
+        </div>
+
+        <div class="l4">
+            <li class="dts" *ngFor="let auths of data.details.author">{{auths.family}} {{auths.given}}, </li>
+
+        </div>
+
+        <div class="l5">
+            <label class="placers">Link: </label>
+        </div>
+
+        <div class="l6">
+            <li class="dts" *ngFor="let link of data.details.link">{{link.URL}}</li>
+        </div>
+    </div>
+
+    <div class="articleContent">
+        <b>Content: </b>{{data.details.abstract}}
+    </div>
+
+</div>

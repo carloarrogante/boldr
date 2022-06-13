@@ -1,0 +1,71 @@
+<div class="main">
+    <div class="title">
+        <h2> List of Works </h2>
+    </div>
+
+    <div class="searchBox">
+        <label>Search: </label>
+        <input 
+          type="text"
+          class="input-form-standard"
+          placeholder="Please type any relevant information to search, Example: journal-article"
+          (keyup)="filterData($any($event.target).value)"
+          >
+    </div>
+    <div class="tableContainer">
+        <div class="work-table-result">
+            <table mat-table [dataSource]="dataSource" class="data-table" matSort>
+                <ng-container matColumnDef="event">
+                    <th mat-header-cell *matHeaderCellDef>  </th>
+                    <td mat-cell *matCellDef="let element">  <button mat-raised-button color="primary">View</button>  </td>
+                  </ng-container>
+         
+              <ng-container matColumnDef="container-title">
+                <th mat-header-cell *matHeaderCellDef> Article </th>
+                <td mat-cell *matCellDef="let element"> {{element["container-title"]}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Document Title </th>
+                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="subject">
+                <th mat-header-cell *matHeaderCellDef > Field </th>
+                <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="author">
+                <th mat-header-cell *matHeaderCellDef > Author </th>
+                <td mat-cell *matCellDef="let element"> <span *ngFor="let auths of element.author">{{auths.family}} {{auths.given}}, &nbsp;</span>  </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef > Type </th>
+                <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+              </ng-container>
+      
+              <ng-container matColumnDef="publisher">
+                <th mat-header-cell *matHeaderCellDef > Publisher </th>
+                <td mat-cell *matCellDef="let element"> {{element.publisher}} </td>
+              </ng-container>
+      
+      
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row 
+                  *matRowDef="let row; columns: displayedColumns;"
+                  (click)="onRowsClicked(row)"   
+              ></tr>
+            </table>
+            <mat-paginator #paginator pageSize=10 showFirstLastButtons> </mat-paginator>
+          </div>
+    </div>
+
+  
+    
+   
+</div>
+
+      
+    
+ 
